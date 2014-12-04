@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="19267AliMaz.NightScoutforWindowsPhonewithLiveTile" Publisher="CN=BD92ECD5-6140-4399-9B5A-F63118C27451" Version="1.1.0.1" ProcessorArchitecture="neutral" />
+  <Identity Name="19267AliMaz.NightScoutforWindowsPhonewithLiveTile" Publisher="CN=BD92ECD5-6140-4399-9B5A-F63118C27451" Version="1.1.0.2" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="1bc82243-02c6-4ac2-a9cd-eac4a3447f4d" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>NightScout for Windows Phone with Live Tile</DisplayName>
-    <PublisherDisplayName>AliMaz</PublisherDisplayName>
+    <PublisherDisplayName>Ali Mazaheri</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -44,6 +44,7 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClientServer" />
+    <DeviceCapability Name="microphone" />
   </Capabilities>
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">

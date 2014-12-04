@@ -24,5 +24,6 @@ NightScout.WindowsPhone.xr.xml
 Settings.xbf
 Html\css\phone.css
 Html\index.html
+NightScoutCommands.xml
 ApplicationInsights.config
 ApplicationInsights.config

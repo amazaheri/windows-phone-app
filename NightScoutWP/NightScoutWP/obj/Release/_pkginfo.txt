@@ -1,1 +1,1 @@
-C:\Users\alimaz\Documents\Visual Studio 2015\Projects\NightScoutWP\NightScoutWP\AppPackages\NightScout.WindowsPhone_1.1.0.1_Test\NightScout.WindowsPhone_1.1.0.1_AnyCPU.appxbundle
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\AppPackages\NightScout.WindowsPhone_1.1.0.2_Test\NightScout.WindowsPhone_1.1.0.2_AnyCPU.appxbundle

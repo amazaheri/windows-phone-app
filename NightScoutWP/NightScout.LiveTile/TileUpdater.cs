@@ -23,14 +23,12 @@ using Windows.Foundation;
         {
             try
             {
-
                 string NightScoutJsonURL = "";
                 Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
                 Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
                 if (localSettings.Values["NightScoutJson"] != null) {
                     NightScoutJsonURL = localSettings.Values["NightScoutJson"].ToString();
-
                     BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
                     nightScoutJson = await getJsonUpdate(new Uri(NightScoutJsonURL));
                     NightScoutJsonFeed.updateTile(nightScoutJson);
@@ -40,18 +38,16 @@ using Windows.Foundation;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
+                throw new Exception(ex.ToString());
             }
         }
 
 
         public IAsyncOperation<String> getJsonUpdate(Uri URL)
-        {
-           
+        {           
                 HttpClient client = new HttpClient();
                 Task<String> response  = client.GetStringAsync(URL);
-                return (response.AsAsyncOperation<String>());
-            
+                return (response.AsAsyncOperation<String>());            
         }
     }
 }

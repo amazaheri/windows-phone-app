@@ -26,6 +26,11 @@
 					<Value>NightScout.WindowsPhone.xr.xml</Value>
 				</Candidate>
 			</NamedResource>
+			<NamedResource name="NightScoutCommands.xml" uri="ms-resource://19267AliMaz.NightScoutforWindowsPhonewithLiveTile/Files/NightScoutCommands.xml">
+				<Candidate type="Path">
+					<Value>NightScoutCommands.xml</Value>
+				</Candidate>
+			</NamedResource>
 			<NamedResource name="Settings.xbf" uri="ms-resource://19267AliMaz.NightScoutforWindowsPhonewithLiveTile/Files/Settings.xbf">
 				<Candidate type="Path">
 					<Value>Settings.xbf</Value>

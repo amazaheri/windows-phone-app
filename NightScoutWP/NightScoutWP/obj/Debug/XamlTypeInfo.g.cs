@@ -642,5 +642,3 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
 }
 
 
-
-
