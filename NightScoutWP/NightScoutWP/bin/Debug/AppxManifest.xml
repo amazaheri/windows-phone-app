@@ -50,22 +50,22 @@
       <InProcessServer>
         <Path>CLRHost.dll</Path>
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.RemoteDependencyModule" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.PageViewTelemetryModule" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.UnhandledExceptionTelemetryModule" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.TelemetryClient" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.PageViewTelemetryModule" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.MetricTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.EventTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TelemetryContext" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.PageViewTelemetry" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TraceTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.MetricTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TelemetryContext" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.EventTelemetry" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Channel.TelemetryChannel" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppSessionInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppUserInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.TelemetryClient" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.DeviceContextInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.ComponentContextInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TimestampPropertyInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.DeviceContextInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppUserInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppSessionInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NightScout.LiveTile.TileUpdater" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NightScout.LiveTile.NightScoutJsonFeed" ThreadingModel="both" />
       </InProcessServer>
