@@ -30,13 +30,13 @@
         <!--TODO: Content should be placed within the following grid-->
         <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
 <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <TextBox x:Name="NightScoutURL" Header="NightScout Azure URL" Text="https://yoursite.azurewebsites.net"/>
+                <TextBox x:Name="NightScoutURL" Header="NightScout Site URL" Text="https://yoursite.azurewebsites.net"/>
         <TextBox x:Name="NightScoutJson" Header="NightScout Json URL" Text="https://yoursite.azurewebsites.net/pebble"/>
 
         <!-- Content body -->
         <TextBlock x:Name="body" Style="{StaticResource MessageDialogContentStyle}" TextWrapping="Wrap">
             <TextBlock.Text>
-            Type in your NightScout Azure website URL along with Json feed.</TextBlock.Text>
+            Type in your NightScout website URL along with Json feed.</TextBlock.Text>
         </TextBlock>
     </StackPanel>
         </Grid>

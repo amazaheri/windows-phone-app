@@ -28,7 +28,7 @@ namespace NightScout.WindowsPhone
         private string NightScoutURL;
         private Windows.Storage.ApplicationDataContainer localSettings;
         private Windows.Storage.StorageFolder localFolder;
-        
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -37,13 +37,10 @@ namespace NightScout.WindowsPhone
 
             if (localSettings.Values["NightScoutURL"] != null)
                 NightScoutURL = localSettings.Values["NightScoutURL"].ToString();
-            
-            this.NavigationCacheMode = NavigationCacheMode.Required;               
+
+            this.NavigationCacheMode = NavigationCacheMode.Required;
 
         }
-
-
-
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -53,19 +50,18 @@ namespace NightScout.WindowsPhone
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e.NavigationMode== NavigationMode.Back)
-                {
+            if (e.NavigationMode == NavigationMode.Back) 
+            {
                 if (localSettings.Values["NightScoutURL"] != null)
                     NightScoutURL = localSettings.Values["NightScoutURL"].ToString();
             }
-            if (NightScoutURL!= null)
+            if (NightScoutURL != null)
             {
                 WebViewControl.Navigate(new Uri(NightScoutURL));
                 HardwareButtons.BackPressed += this.MainPage_BackPressed;
-                
             }
-           
         }
+
 
         /// <summary>
         /// Invoked when this page is being navigated away.
@@ -92,23 +88,24 @@ namespace NightScout.WindowsPhone
         {
             if (!args.IsSuccess)
             {
-                Debug.WriteLine("Navigation to this page failed, check your internet connection.");
+                throw new Exception("Navigation to this page failed, check your internet connection.");
+                
             }
         }
 
-        
+
         private void RefreshAppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            WebViewControl.Refresh();       
+            WebViewControl.Refresh();
         }
 
-        
+
         private void SettingsAppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Settings),this);
-        }        
-
+            this.Frame.Navigate(typeof(Settings));
         }
-        
+
     }
+
+}
 

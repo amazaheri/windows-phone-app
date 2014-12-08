@@ -18,6 +18,8 @@
     <ApplicationInsightsResourceId>/subscriptions/b326f01f-b5a4-4e7d-948f-f13b4f678ac7/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/NightScoutWP</ApplicationInsightsResourceId>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+    <AppxBundle>Always</AppxBundle>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -131,6 +133,9 @@
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="Html\css\phone.css" />
     <Content Include="Html\index.html" />
+    <Content Include="NightScoutCommands.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>

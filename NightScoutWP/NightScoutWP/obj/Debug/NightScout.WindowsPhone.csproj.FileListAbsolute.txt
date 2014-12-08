@@ -56,6 +56,7 @@ C:\Users\alimaz\Documents\Visual Studio 2015\Projects\NightScoutWP\NightScoutWP\
 C:\Users\alimaz\Documents\Visual Studio 2015\Projects\NightScoutWP\NightScoutWP\obj\Debug\qualifiers.txt.intermediate
 C:\Users\alimaz\Documents\Visual Studio 2015\Projects\NightScoutWP\NightScoutWP\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\alimaz\Documents\Visual Studio 2015\Projects\NightScoutWP\NightScoutWP\obj\Debug\ProjectArchitectures.txt
+<<<<<<< HEAD
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.csprojResolveAssemblyReference.cache
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\App.g.i.cs
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\App.g.cs
@@ -73,6 +74,8 @@ C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightS
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\XamlSaveStateFile.xml
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.exe
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.pdb
+=======
+>>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\ApplicationInsights.config
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\App.xbf
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\MainPage.xbf
@@ -100,7 +103,28 @@ C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightS
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\Newtonsoft.Json.xml
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\System.Net.Http.Extensions.xml
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\System.Net.Http.Primitives.xml
+<<<<<<< HEAD
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\ApplicationInsights.config
+=======
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.csprojResolveAssemblyReference.cache
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\App.g.i.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\App.g.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\MainPage.g.i.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\MainPage.g.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Settings.g.i.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Settings.g.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\App.xaml
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\MainPage.xaml
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Settings.xaml
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\App.xbf
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\MainPage.xbf
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Settings.xbf
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\XamlSaveStateFile.xml
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\ApplicationInsights.config
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.exe
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.pdb
+>>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\NightScout.WindowsPhone.csproj.GenerateResource.Cache
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\priconfig.xml
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\priconfig.xml.intermediate
