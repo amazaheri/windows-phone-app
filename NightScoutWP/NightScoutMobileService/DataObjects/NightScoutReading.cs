@@ -13,6 +13,10 @@ namespace NightScoutMobileService.DataObjects
         public int filtered { get; set; }
         public int unfiltered { get; set; }
         public int rssi { get; set; }
-        public DateTime date { get; set; } 
+        public DateTime date { get; set; }
+        public int mbg { get; set; }
+        public double slope { get; set; }
+        public double scale { get; set; }
+        public double intercept { get; set; }
     }
 }

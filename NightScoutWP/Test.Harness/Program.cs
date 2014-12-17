@@ -11,7 +11,7 @@ namespace Test.Harness
     class Program
     {
         public static MobileServiceClient MobileService = new MobileServiceClient(
-          "https://nightscoutmobile.azure-mobile.net/", "PAwTZVMkmGBUuozXrQsFZAYfTNnYqB15");
+          "https://nightscoutmobile.azure-mobile.net/", "kdRHsBiJVoDqlWmIkJNWEVfrQhzGUm64");
 
         
         static void Main(string[] args)
@@ -23,12 +23,11 @@ namespace Test.Harness
             try
             {
                 IMobileServiceTable<NightScoutReading> table = MobileService.GetTable<NightScoutReading>();
-                NightScoutReading reading = await table.LookupAsync("5484f78529b19f32387ffa07");
-                Console.WriteLine(reading.sgv);
-                Console.Read();
-                //IMobileServiceTableQuery<NightScoutReading> query = table.Where(item => item.type != null && item.type == "sgv");
-                //var items = await query.ToCollectionAsync();            
-
+                //NightScoutReading reading = await table.LookupAsync("5484f78529b19f32387ffa07");
+                //Console.WriteLine(reading.sgv);
+                //Console.Read();
+                List<NightScoutReading> items = await table.ToListAsync();
+                
             }
             catch (MobileServiceInvalidOperationException ex)
             {

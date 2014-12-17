@@ -32,7 +32,7 @@ namespace NightScoutMobileService
         {
             List<NightScoutReading> items = new List<NightScoutReading>
             {
-                new NightScoutReading { Id = Guid.NewGuid().ToString(), sgv = 200, direction = "Up", type="sgv"},
+                new NightScoutReading { Id = Guid.NewGuid().ToString(), sgv = 200, direction = "Up", type="sgv" , date=DateTime.UtcNow , dateString="", device="", filtered=0, intercept=0.0, mbg=0,  rssi=0 , scale=0.0 , slope=0.0 , unfiltered= 0 },
             };
 
             foreach (NightScoutReading item in items)

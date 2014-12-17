@@ -6,17 +6,20 @@ using System.Web.Http.OData;
 using Microsoft.WindowsAzure.Mobile.Service;
 using NightScoutMobileService.DataObjects;
 using NightScoutMobileService.Models;
+using System;
 
 namespace NightScoutMobileService.Controllers
 {
     public class NightScoutReadingController : TableController<NightScoutReading>
     {
         private bool connectionStringInitialized = false;
-
+       
         // GET tables/NightScoutReading
         public IQueryable<NightScoutReading> GetAllNightScoutReading()
         {
-            return Query(); 
+            IQueryable < NightScoutReading > query = Query();
+
+            return query;                      
         }
 
         // GET tables/NightScoutReading/48D68C86-6EA6-4C25-AA33-223FC9A27959
