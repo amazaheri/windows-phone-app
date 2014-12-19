@@ -6,20 +6,40 @@ using System.Web.Http.OData;
 using Microsoft.WindowsAzure.Mobile.Service;
 using NightScoutMobileService.DataObjects;
 using NightScoutMobileService.Models;
-using System;
 
 namespace NightScoutMobileService.Controllers
 {
     public class NightScoutReadingController : TableController<NightScoutReading>
     {
         private bool connectionStringInitialized = false;
-       
+        protected override void Initialize(HttpControllerContext controllerContext)
+        {
+            base.Initialize(controllerContext);
+            string connectionStringName = "Mongo";
+            string databaseName = "sithlordsam";
+            string collectionName = "sithlordsam";
+            InitializeConnectionString(connectionStringName);
+            DomainManager = new MongoDomainManager<NightScoutReading>(connectionStringName, databaseName, collectionName, Request, Services);
+
+        }
+        private void InitializeConnectionString(string connectionStringName)
+        {
+
+            if (!connectionStringInitialized)
+            {
+                connectionStringInitialized = true;
+                if (!this.Services.Settings.Connections.ContainsKey(connectionStringName))
+                {
+                    var connectionString = this.Services.Settings[connectionStringName];
+                    var connectionSetting = new ConnectionSettings(connectionStringName, connectionString);
+                    this.Services.Settings.Connections.Add(connectionStringName, connectionSetting);
+                }
+            }
+        }
         // GET tables/NightScoutReading
         public IQueryable<NightScoutReading> GetAllNightScoutReading()
         {
-            IQueryable < NightScoutReading > query = Query();
-
-            return query;                      
+            return Query(); 
         }
 
         // GET tables/NightScoutReading/48D68C86-6EA6-4C25-AA33-223FC9A27959
@@ -45,31 +65,6 @@ namespace NightScoutMobileService.Controllers
         public Task DeleteNightScoutReading(string id)
         {
              return DeleteAsync(id);
-        }
-        protected override async void Initialize(HttpControllerContext controllerContext)
-        {
-            base.Initialize(controllerContext);
-            string connectionStringName = "Mongo";
-            string databaseName = "sithlordsam";
-            string collectionName = "sithlordsam";
-            InitializeConnectionString(connectionStringName);
-            DomainManager = new MongoDomainManager<NightScoutReading>(connectionStringName, databaseName, collectionName, Request, Services);
-            
-        }
-
-        private void InitializeConnectionString(string connectionStringName)
-        {
-
-            if (!connectionStringInitialized)
-            {
-                connectionStringInitialized = true;
-                if (!this.Services.Settings.Connections.ContainsKey(connectionStringName))
-                {
-                    var connectionString = this.Services.Settings[connectionStringName];
-                    var connectionSetting = new ConnectionSettings(connectionStringName, connectionString);
-                    this.Services.Settings.Connections.Add(connectionStringName, connectionSetting);
-                }
-            }
         }
 
     }

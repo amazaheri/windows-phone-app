@@ -26,7 +26,7 @@ namespace Test.Harness
                 //NightScoutReading reading = await table.LookupAsync("5484f78529b19f32387ffa07");
                 //Console.WriteLine(reading.sgv);
                 //Console.Read();
-                List<NightScoutReading> items = await table.ToListAsync();
+                List<NightScoutReading> items = await table.Where(O=>O.type=="sgv").ToListAsync();
                 
             }
             catch (MobileServiceInvalidOperationException ex)

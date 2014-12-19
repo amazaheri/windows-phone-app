@@ -196,7 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\NightScoutReadingsController.cs" />
+    <Compile Include="Controllers\NightScoutReadingController.cs" />
     <Compile Include="DataObjects\NightScoutReading.cs" />
     <Compile Include="Models\NightScoutMobileContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
