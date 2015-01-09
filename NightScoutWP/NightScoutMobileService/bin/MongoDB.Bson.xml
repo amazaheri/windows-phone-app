@@ -1516,6 +1516,21 @@
             </summary>
             <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
         </member>
+        <member name="T:MongoDB.Bson.IO.Utf8Encodings">
+            <summary>
+            Represents a singleton instance of a strict UTF8Encoding.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.IO.Utf8Encodings.Lenient">
+            <summary>
+            Gets the lenient instance.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.IO.Utf8Encodings.Strict">
+            <summary>
+            Gets the strict instance.
+            </summary>
+        </member>
         <member name="T:MongoDB.Bson.GuidRepresentation">
             <summary>
             Represents the representation to use when converting a Guid to a BSON binary value.

@@ -36,10 +36,13 @@ namespace NightScoutMobileService.Controllers
                 }
             }
         }
+
         // GET tables/NightScoutReading
         public IQueryable<NightScoutReading> GetAllNightScoutReading()
         {
-            return Query(); 
+            //string uri = this.Request.RequestUri.AbsoluteUri.ToLower();
+            //this.Request.RequestUri = new System.Uri(uri);
+            return Query();
         }
 
         // GET tables/NightScoutReading/48D68C86-6EA6-4C25-AA33-223FC9A27959

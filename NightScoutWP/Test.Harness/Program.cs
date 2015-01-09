@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NightScoutMobileService.DataObjects;
+
 
 namespace Test.Harness
 {
     class Program
     {
         public static MobileServiceClient MobileService = new MobileServiceClient(
-          "https://nightscoutmobile.azure-mobile.net/", "kdRHsBiJVoDqlWmIkJNWEVfrQhzGUm64");
+          "https://nightscoutmobile.azure-mobile.net/", "nYbTwughndskVWTjEGMaemXABjYWlL11");
 
         
         static void Main(string[] args)
@@ -26,8 +26,8 @@ namespace Test.Harness
                 //NightScoutReading reading = await table.LookupAsync("5484f78529b19f32387ffa07");
                 //Console.WriteLine(reading.sgv);
                 //Console.Read();
-                List<NightScoutReading> items = await table.Where(O=>O.type=="sgv").ToListAsync();
-                
+                MobileService.SerializerSettings.CamelCasePropertyNames = true;
+                List<NightScoutReading> items = await table.OrderByDescending(O=>O.date).ToListAsync();                
             }
             catch (MobileServiceInvalidOperationException ex)
             {
