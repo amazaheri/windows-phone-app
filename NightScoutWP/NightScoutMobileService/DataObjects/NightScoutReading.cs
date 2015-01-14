@@ -1,23 +1,37 @@
 ﻿using Microsoft.WindowsAzure.Mobile.Service;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 
 
 namespace NightScoutMobileService.DataObjects
 {
     public class NightScoutReading : DocumentData
-    {        
-        public int sgv { get; set; }        
-        public string direction { get; set; }        
-        public string type { get; set; }        
-        public string device { get; set; }        
-        public string dateString { get; set; }        
-        public int filtered { get; set; }        
-        public int unfiltered { get; set; }        
-        public int rssi { get; set; }        
-        public DateTime date { get; set; }        
-        public int mbg { get; set; }        
-        public double slope { get; set; }        
-        public double scale { get; set; }        
-        public double intercept { get; set; }
+    {
+        [BsonElement("sgv")]
+        public int Sgv { get; set; }
+        [BsonElement("direction")]
+        public string Direction { get; set; }
+        [BsonElement("type")]
+        public string Type { get; set; }
+        [BsonElement("device")]
+        public string Device { get; set; }
+        [BsonElement("dateString")]
+        public string DateString { get; set; }
+        [BsonElement("filtered")]
+        public int Filtered { get; set; }
+        [BsonElement("unfiltered")]
+        public int Unfiltered { get; set; }
+        [BsonElement("rssi")]
+        public int Rssi { get; set; }
+        [BsonElement("date")]
+        public DateTime Date { get; set; }
+        [BsonElement("mbg")]
+        public int Mbg { get; set; }
+        [BsonElement("slope")]
+        public double Slope { get; set; }
+        [BsonElement("scale")]
+        public double Scale { get; set; }
+        [BsonElement("intercept")]
+        public double Intercept { get; set; }
     }
 }

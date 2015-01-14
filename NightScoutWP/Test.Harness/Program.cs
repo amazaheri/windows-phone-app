@@ -26,8 +26,7 @@ namespace Test.Harness
                 //NightScoutReading reading = await table.LookupAsync("5484f78529b19f32387ffa07");
                 //Console.WriteLine(reading.sgv);
                 //Console.Read();
-                MobileService.SerializerSettings.CamelCasePropertyNames = true;
-                List<NightScoutReading> items = await table.OrderByDescending(O=>O.date).ToListAsync();                
+                List<NightScoutReading> items = await table.Where(O=>O.type== "sgv").OrderByDescending(O=>O.date).ToListAsync();                
             }
             catch (MobileServiceInvalidOperationException ex)
             {

@@ -1664,7 +1664,7 @@
             Allow access to requests that include the master key as a header.
             </summary>
         </member>
-        <member name="M:Microsoft.WindowsAzure.Mobile.Service.Security.AzureActiveDirectoryBearerAuthenticationExtensions.UseCustomAzureActiveDirectoryBearerAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.ActiveDirectory.WindowsAzureActiveDirectoryBearerAuthenticationOptions)">
+        <member name="M:Microsoft.WindowsAzure.Mobile.Service.Security.AzureActiveDirectoryBearerAuthenticationExtensions.UseCustomAzureActiveDirectoryBearerAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.ActiveDirectory.WindowsAzureActiveDirectoryBearerAuthenticationOptions,Microsoft.WindowsAzure.Mobile.Service.Config.IServiceSettingsProvider)">
             <summary>
             TEMP : This is temporary custom code from the Azure Active Directory team to allow us to support the common
             metadata endpoint and skip issuer validation to support multi tenant app scenarios. Once they update
@@ -2942,6 +2942,11 @@
         <member name="F:Microsoft.WindowsAzure.Mobile.Service.Config.ServiceSettingsKeys.ServiceName">
             <summary>
             The key identifying the application setting containing the name of the mobile service.
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAzure.Mobile.Service.Config.ServiceSettingsKeys.ServiceDomainSuffix">
+            <summary>
+            The key identifying the application setting containing the DNS domain suffix of the mobile service.
             </summary>
         </member>
         <member name="F:Microsoft.WindowsAzure.Mobile.Service.Config.ServiceSettingsKeys.ServiceKey">
@@ -4961,9 +4966,19 @@
             Gets or sets the Azure Active Directory audience used for token validation.
             </summary>
         </member>
+        <member name="P:Microsoft.WindowsAzure.Mobile.Service.ServiceSettingsDictionary.ServiceDomainSuffix">
+            <summary>
+            Gets or sets the Service DNS domain name suffix relevant to the environment, e.g. <c>azure-mobile.net</c> or <c>azure-mobile.cn</c>
+            </summary>
+        </member>
+        <member name="P:Microsoft.WindowsAzure.Mobile.Service.ServiceSettingsDictionary.AzureActiveDirectoryDomain">
+            <summary>
+            Gets the current Azure Active Directory DNS domain name based on ServiceDomainSuffix
+            </summary>
+        </member>
         <member name="P:Microsoft.WindowsAzure.Mobile.Service.ServiceSettingsDictionary.AzureActiveDirectoryTenants">
             <summary>
-            Gets or sets a comma separated list of allowed AAD tenants. These should be specified
+            Gets or sets a comma separated list of allowed Azure Active Directory tenants. These should be specified
             as tenant domain names.
             </summary>
         </member>
