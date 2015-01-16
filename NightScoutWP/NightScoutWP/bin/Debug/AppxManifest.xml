@@ -53,22 +53,22 @@
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.RemoteDependencyModule" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.UnhandledExceptionTelemetryModule" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.PageViewTelemetryModule" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Channel.TelemetryChannel" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.MetricTelemetry" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.EventTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TelemetryContext" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.PageViewTelemetry" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TraceTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Channel.TelemetryChannel" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.EventTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.PageViewTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TelemetryContext" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.TelemetryClient" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.DeviceContextInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.ComponentContextInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TimestampPropertyInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppUserInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppSessionInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TimestampPropertyInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.ComponentContextInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NightScout.LiveTile.TileUpdater" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.DeviceContextInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NightScout.LiveTile.NightScoutJsonFeed" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NightScout.LiveTile.TileUpdater" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
@@ -76,7 +76,7 @@
     <build:Item Name="TargetFrameworkMoniker" Value="WindowsPhoneApp,Version=v8.1" />
     <build:Item Name="VisualStudio" Version="14.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Ultimate 2015 Preview" />
-    <build:Item Name="OperatingSystem" Version="6.4.9879.0 (fbl_release.141103-1722)" />
+    <build:Item Name="OperatingSystem" Version="10.0.9896.0 (fbl_release.141124-1153)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.22310.1" />
     <build:Item Name="ProjectGUID" Value="{51F21162-7676-453E-9BEC-A3E4CC04A99E}" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.81.Build.Tasks.dll" Version="14.0.22310.1" />

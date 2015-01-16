@@ -19,8 +19,7 @@ namespace NightScoutMobileService.Controllers
             string databaseName = "sithlordsam";
             string collectionName = "sithlordsam";
             InitializeConnectionString(connectionStringName);
-            DomainManager = new MongoDomainManager<NightScoutReading>(connectionStringName, databaseName, collectionName, Request, Services);
-
+            DomainManager = new MongoDomainManager<NightScoutReading>(connectionStringName, databaseName, collectionName, Request, Services);           
         }
         private void InitializeConnectionString(string connectionStringName)
         {

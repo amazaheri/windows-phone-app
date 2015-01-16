@@ -124,7 +124,6 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
 
         private void InitTypeTables()
         {
-<<<<<<< HEAD
             _typeNameTable = new string[11];
             _typeNameTable[0] = "Microsoft.ApplicationInsights.TelemetryClient";
             _typeNameTable[1] = "Object";
@@ -150,35 +149,6 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
             _typeTable[8] = typeof(global::Windows.UI.Xaml.DependencyObject);
             _typeTable[9] = typeof(global::NightScoutWP.Common.ObservableDictionary);
             _typeTable[10] = typeof(global::System.String);
-=======
-            _typeNameTable = new string[12];
-            _typeNameTable[0] = "Microsoft.ApplicationInsights.TelemetryClient";
-            _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "Microsoft.ApplicationInsights.DataContracts.TelemetryContext";
-            _typeNameTable[3] = "NightScout.WindowsPhone.Cortana";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[5] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[6] = "NightScoutWP.Common.NavigationHelper";
-            _typeNameTable[7] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[8] = "NightScoutWP.Common.ObservableDictionary";
-            _typeNameTable[9] = "String";
-            _typeNameTable[10] = "NightScout.WindowsPhone.MainPage";
-            _typeNameTable[11] = "NightScout.WindowsPhone.Settings";
-
-            _typeTable = new global::System.Type[12];
-            _typeTable[0] = typeof(global::Microsoft.ApplicationInsights.TelemetryClient);
-            _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::Microsoft.ApplicationInsights.DataContracts.TelemetryContext);
-            _typeTable[3] = typeof(global::NightScout.WindowsPhone.Cortana);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[6] = typeof(global::NightScoutWP.Common.NavigationHelper);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[8] = typeof(global::NightScoutWP.Common.ObservableDictionary);
-            _typeTable[9] = typeof(global::System.String);
-            _typeTable[10] = typeof(global::NightScout.WindowsPhone.MainPage);
-            _typeTable[11] = typeof(global::NightScout.WindowsPhone.Settings);
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -215,18 +185,10 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
 
         private object Activate_0_TelemetryClient() { return new global::Microsoft.ApplicationInsights.TelemetryClient(); }
         private object Activate_2_TelemetryContext() { return new global::Microsoft.ApplicationInsights.DataContracts.TelemetryContext(); }
-<<<<<<< HEAD
         private object Activate_3_MainPage() { return new global::NightScout.WindowsPhone.MainPage(); }
         private object Activate_6_Settings() { return new global::NightScout.WindowsPhone.Settings(); }
         private object Activate_9_ObservableDictionary() { return new global::NightScoutWP.Common.ObservableDictionary(); }
         private void MapAdd_9_ObservableDictionary(object instance, object key, object item)
-=======
-        private object Activate_3_Cortana() { return new global::NightScout.WindowsPhone.Cortana(); }
-        private object Activate_8_ObservableDictionary() { return new global::NightScoutWP.Common.ObservableDictionary(); }
-        private object Activate_10_MainPage() { return new global::NightScout.WindowsPhone.MainPage(); }
-        private object Activate_11_Settings() { return new global::NightScout.WindowsPhone.Settings(); }
-        private void MapAdd_8_ObservableDictionary(object instance, object key, object item)
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
             var newKey = (global::System.String)key;
@@ -261,17 +223,9 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-<<<<<<< HEAD
             case 3:   //  NightScout.WindowsPhone.MainPage
                 userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MainPage;
-=======
-            case 3:   //  NightScout.WindowsPhone.Cortana
-                userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_Cortana;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -284,7 +238,6 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
                 xamlType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-<<<<<<< HEAD
             case 6:   //  NightScout.WindowsPhone.Settings
                 userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_6_Settings;
@@ -295,16 +248,12 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
                 break;
 
             case 7:   //  NightScoutWP.Common.NavigationHelper
-=======
-            case 6:   //  NightScoutWP.Common.NavigationHelper
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
                 userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-<<<<<<< HEAD
             case 8:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
@@ -312,45 +261,14 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
             case 9:   //  NightScoutWP.Common.ObservableDictionary
                 userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.DictionaryAdd = MapAdd_9_ObservableDictionary;
-=======
-            case 7:   //  Windows.UI.Xaml.DependencyObject
-                xamlType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  NightScoutWP.Common.ObservableDictionary
-                userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_8_ObservableDictionary;
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-<<<<<<< HEAD
             case 10:   //  String
                 xamlType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
-=======
-            case 9:   //  String
-                xamlType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 10:   //  NightScout.WindowsPhone.MainPage
-                userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 11:   //  NightScout.WindowsPhone.Settings
-                userType = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_Settings;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
             }
             return xamlType;
         }
@@ -361,30 +279,12 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
             var that = (global::Microsoft.ApplicationInsights.TelemetryClient)instance;
             return that.Context;
         }
-<<<<<<< HEAD
         private object get_1_Settings_NavigationHelper(object instance)
-=======
-        private object get_1_Cortana_NavigationHelper(object instance)
-        {
-            var that = (global::NightScout.WindowsPhone.Cortana)instance;
-            return that.NavigationHelper;
-        }
-        private object get_2_Cortana_DefaultViewModel(object instance)
-        {
-            var that = (global::NightScout.WindowsPhone.Cortana)instance;
-            return that.DefaultViewModel;
-        }
-        private object get_3_Settings_NavigationHelper(object instance)
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
         {
             var that = (global::NightScout.WindowsPhone.Settings)instance;
             return that.NavigationHelper;
         }
-<<<<<<< HEAD
         private object get_2_Settings_DefaultViewModel(object instance)
-=======
-        private object get_4_Settings_DefaultViewModel(object instance)
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
         {
             var that = (global::NightScout.WindowsPhone.Settings)instance;
             return that.DefaultViewModel;
@@ -403,39 +303,16 @@ namespace NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo
                 xamlMember.Getter = get_0_TelemetryClient_Context;
                 xamlMember.SetIsReadOnly();
                 break;
-<<<<<<< HEAD
             case "NightScout.WindowsPhone.Settings.NavigationHelper":
                 userType = (global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("NightScout.WindowsPhone.Settings");
                 xamlMember = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "NightScoutWP.Common.NavigationHelper");
                 xamlMember.Getter = get_1_Settings_NavigationHelper;
-=======
-            case "NightScout.WindowsPhone.Cortana.NavigationHelper":
-                userType = (global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("NightScout.WindowsPhone.Cortana");
-                xamlMember = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "NightScoutWP.Common.NavigationHelper");
-                xamlMember.Getter = get_1_Cortana_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "NightScout.WindowsPhone.Cortana.DefaultViewModel":
-                userType = (global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("NightScout.WindowsPhone.Cortana");
-                xamlMember = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "NightScoutWP.Common.ObservableDictionary");
-                xamlMember.Getter = get_2_Cortana_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "NightScout.WindowsPhone.Settings.NavigationHelper":
-                userType = (global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("NightScout.WindowsPhone.Settings");
-                xamlMember = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlMember(this, "NavigationHelper", "NightScoutWP.Common.NavigationHelper");
-                xamlMember.Getter = get_3_Settings_NavigationHelper;
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
                 xamlMember.SetIsReadOnly();
                 break;
             case "NightScout.WindowsPhone.Settings.DefaultViewModel":
                 userType = (global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlUserType)GetXamlTypeByName("NightScout.WindowsPhone.Settings");
                 xamlMember = new global::NightScout.WindowsPhone.NightScout_WindowsPhone_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "NightScoutWP.Common.ObservableDictionary");
-<<<<<<< HEAD
                 xamlMember.Getter = get_2_Settings_DefaultViewModel;
-=======
-                xamlMember.Getter = get_4_Settings_DefaultViewModel;
->>>>>>> 9786e915f0881c3cd45b7b58c560cb515eb5f1f6
                 xamlMember.SetIsReadOnly();
                 break;
             }

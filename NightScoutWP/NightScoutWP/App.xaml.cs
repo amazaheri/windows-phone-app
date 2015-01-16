@@ -16,6 +16,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Windows.Networking.PushNotifications;
+using Windows.UI.Popups;
+using Microsoft.WindowsAzure.MobileServices;
 
 
 
@@ -31,6 +34,8 @@ namespace NightScout.WindowsPhone
     {
         private TransitionCollection transitions;
         private Frame rootFrame;
+        public static MobileServiceClient MobileService = new MobileServiceClient(
+          "https://nightscoutmobile.azure-mobile.net/", "nYbTwughndskVWTjEGMaemXABjYWlL11");
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -55,7 +60,7 @@ namespace NightScout.WindowsPhone
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
+            InitNotificationsAsync();
             rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -216,6 +221,30 @@ namespace NightScout.WindowsPhone
             if (!rootFrame.Navigate(navigateToPageType))
             {
                 throw new Exception("Failed to create voice command page");
+            }
+        }
+
+        private async void InitNotificationsAsync()
+        {
+            // Request a push notification channel.
+            var channel = await PushNotificationChannelManager
+                .CreatePushNotificationChannelForApplicationAsync();
+
+            // Register for notifications using the new channel
+            System.Exception exception = null;
+            try
+            {
+                await MobileService.GetPush().RegisterNativeAsync(channel.Uri);
+            }
+            catch (System.Exception ex)
+            {
+                exception = ex;
+            }
+            if (exception != null)
+            {
+                var dialog = new MessageDialog(exception.Message, "Registering Channel URI");
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
             }
         }
 

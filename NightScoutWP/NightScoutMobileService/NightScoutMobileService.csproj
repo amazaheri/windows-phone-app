@@ -101,7 +101,7 @@
     </Reference>
     <Reference Include="Microsoft.ServiceBus, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WindowsAzure.ServiceBus.2.5.3.0\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
+      <HintPath>..\packages\WindowsAzure.ServiceBus.2.3.4.0\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Mobile.Service">
       <HintPath>..\packages\WindowsAzure.MobileServices.Backend.1.0.439\lib\net45\Microsoft.WindowsAzure.Mobile.Service.dll</HintPath>
@@ -217,7 +217,7 @@
     <Compile Include="Controllers\NightScoutReadingController.cs" />
     <Compile Include="DataObjects\NightScoutReading.cs" />
     <Compile Include="Models\NightScoutMobileContext.cs" />
-    <Compile Include="ScheduledJobs\SampleJob.cs" />
+    <Compile Include="ScheduledJobs\NightScoutJob.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
