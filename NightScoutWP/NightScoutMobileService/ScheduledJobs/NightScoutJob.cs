@@ -25,29 +25,56 @@ namespace NightScoutMobileService
 
         public async override Task ExecuteAsync()
         {
-
-            var client = new MongoClient(this.Services.Settings.Connections["mongo"].ConnectionString);
-            var server = client.GetServer();
-            var database = server.GetDatabase("sithlordsam");
-            var collection = database.GetCollection<NightScoutReading>("sithlordsam");
-            var query = collection.AsQueryable<NightScoutReading>().Where(e => e.Type == "sgv").OrderBy(e => e.Date).First<NightScoutReading>();
-            char direction = '-';
-           
-            if ((query.Sgv <= 70) || (query.Sgv >= 180))
+            try
             {
-                if (query.Direction.ToLower().Contains("up"))
-                    direction = '\x25B2';
-                else
-                        if (query.Direction.ToLower().Contains("down"))
-                    direction = '\x25BC';
-                string notification = String.Format("Current bg: {0} Trend: {1}", query.Sgv, direction.ToString());
-                NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
-                var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
-                await hub.SendWindowsNativeNotificationAsync(toast);
+                var client = new MongoClient(this.Services.Settings.Connections["mongo"].ConnectionString);
+                var server = client.GetServer();
+                var database = server.GetDatabase("sithlordsam");
+                var collection = database.GetCollection<NightScoutReading>("sithlordsam");
+                var query = collection.AsQueryable<NightScoutReading>().Where(e => e.Type == "sgv").Last<NightScoutReading>();
+                string direction = "-";
+
+                if ((query.Sgv <= 70) || (query.Sgv >= 180)) 
+                {
+                    switch (query.Direction.ToLower())
+                    {
+                        case "singleup":
+                            direction = '\x25B2'.ToString();
+                            break;
+                        case "doubleup":
+                            direction = string.Concat('\x25B2', '\x25B2');
+                            break;
+                        case "fortyfiveup":
+                            direction = '\x25B3'.ToString();
+                            break;
+                        case "singledown":
+                            direction = '\x25BC'.ToString();
+                            break;
+                        case "doubledown":
+                            direction = string.Concat('\x25BC', '\x25BC');
+                            break;
+                        case "fortyfivedown":
+                            direction = '\x25BD'.ToString();
+                            break;
+                        case "NOT COMPUTABLE": break;
+                    }
+
+                    string notification = String.Format("Current bg: {0} Trend: {1}", query.Sgv, direction);
+                    NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
+                    var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
+                    await hub.SendWindowsNativeNotificationAsync(toast);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Services.Log.Error(ex.Message);
+
+            }
+            
             }
 
         }
 
     }
 
-}
+

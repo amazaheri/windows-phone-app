@@ -1,0 +1,2 @@
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScout.LiveTile\NightScout.LiveTile.csproj;neutral
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\NightScout.WindowsPhone.csproj;neutral

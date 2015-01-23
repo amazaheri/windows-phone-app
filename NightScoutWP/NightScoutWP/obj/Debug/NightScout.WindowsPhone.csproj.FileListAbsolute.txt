@@ -63,3 +63,11 @@ C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightS
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\qualifiers.txt.intermediate
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\ProjectArchitectures.txt
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\layout.resfiles.intermediate
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\Resources.resfiles.intermediate
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\pri.resfiles.intermediate
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml
+C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\Microsoft.WindowsAzure.Mobile\priconfig.xml.intermediate

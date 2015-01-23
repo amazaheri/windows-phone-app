@@ -24,7 +24,7 @@ namespace NightScout.LiveTile
             try
             {
                 string bg = "";
-                char direction = '-';
+                string direction = "-";
                 string battery = "";
 
                 JObject response = JObject.Parse(jSonResponse);
@@ -34,11 +34,29 @@ namespace NightScout.LiveTile
                 battery = response["bgs"][0]["battery"].ToString();
 
 
-                if (response["bgs"][0]["direction"].ToString().ToLower().Contains("up"))
-                    direction = '\x25B2';
-                else
-                    if (response["bgs"][0]["direction"].ToString().ToLower().Contains("down"))
-                    direction = '\x25BC';
+                switch (response["bgs"][0]["direction"].ToString().ToLower())
+                {
+                    case "singleup":
+                        direction = '\x25B2'.ToString();
+                        break;
+                    case "doubleup":
+                        direction = string.Concat('\x25B2', '\x25B2');
+                        break;
+                    case "fortyfiveup":
+                        direction = '\x25B3'.ToString();
+                        break;
+                    case "singledown":
+                        direction = '\x25BC'.ToString();
+                        break;
+                    case "doubledown":
+                        direction = string.Concat('\x25BC', '\x25BC');
+                        break;
+                    case "fortyfivedown":
+                        direction = '\x25BD'.ToString();
+                        break;
+                    case "NOT COMPUTABLE": break;
+                }
+
 
                 string notification = String.Format("Current bg: {0} \r\nTrend: {1} \r\nBattery: {2}% ", bg, direction.ToString(), battery);
 
@@ -65,23 +83,23 @@ namespace NightScout.LiveTile
                 BadgeNotification badge = new BadgeNotification(badgeXml);
                 BadgeUpdateManager.CreateBadgeUpdaterForApplication().Update(badge);
 
-                int reading = System.Int32.Parse(bg);
+                //int reading = System.Int32.Parse(bg);
 
-                if ((reading > 200) || (reading < 80))
-                {
-                    ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText01;
-                    XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
-                    XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-                    toastTextElements[0].AppendChild(toastXml.CreateTextNode(String.Format("Current bg: {0} Trend: {1}", bg, direction.ToString())));                   
-                                       
-                    IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
-                    ((XmlElement)toastNode).SetAttribute("duration", "long");
-                    XmlElement audio = toastXml.CreateElement("audio");
-                    toastNode.AppendChild(audio);
-                    
-                    ToastNotification toast = new ToastNotification(toastXml);
-                    ToastNotificationManager.CreateToastNotifier().Show(toast);
-                }
+                //if ((reading > 200) || (reading < 80))
+                //{
+                //    ToastTemplateType toastTemplate = ToastTemplateType.ToastImageAndText01;
+                //    XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+                //    XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
+                //    toastTextElements[0].AppendChild(toastXml.CreateTextNode(String.Format("Current bg: {0} Trend: {1}", bg, direction.ToString())));
+
+                //    IXmlNode toastNode = toastXml.SelectSingleNode("/toast");
+                //    ((XmlElement)toastNode).SetAttribute("duration", "long");
+                //    XmlElement audio = toastXml.CreateElement("audio");
+                //    toastNode.AppendChild(audio);
+
+                //    ToastNotification toast = new ToastNotification(toastXml);
+                //    ToastNotificationManager.CreateToastNotifier().Show(toast);
+                //}
             }
             catch (Exception ex)
             {

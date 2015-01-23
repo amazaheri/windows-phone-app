@@ -91,7 +91,7 @@ namespace NightScout.WindowsPhone
                 throw new Exception("Navigation to this page failed, check your internet connection.");
                 
             }
-        }
+       }
 
 
         private void RefreshAppBarButton_Click(object sender, RoutedEventArgs e)
@@ -103,9 +103,7 @@ namespace NightScout.WindowsPhone
         private void SettingsAppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Settings));
-        }
-
+        }      
     }
-
 }
 

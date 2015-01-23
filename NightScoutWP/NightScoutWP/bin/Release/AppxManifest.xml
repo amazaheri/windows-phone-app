@@ -67,8 +67,8 @@
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.ComponentContextInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.DeviceContextInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="NightScout.LiveTile.NightScoutJsonFeed" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NightScout.LiveTile.TileUpdater" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="NightScout.LiveTile.NightScoutJsonFeed" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

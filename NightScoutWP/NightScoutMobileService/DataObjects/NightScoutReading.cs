@@ -33,5 +33,6 @@ namespace NightScoutMobileService.DataObjects
         public double Scale { get; set; }
         [BsonElement("intercept")]
         public double Intercept { get; set; }
+        
     }
 }

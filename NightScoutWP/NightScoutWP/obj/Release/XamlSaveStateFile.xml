@@ -1,0 +1,14 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\nightscoutwp\obj\release\intermediatexaml\nightscout.windowsphone.exe" HashGuid="705e49ce-1030-4baa-be8d-a78f4c7bbc1d" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\microsoft.applicationinsights.runtimetelemetry.0.11.1-build00694\lib\portable-win81+wpa81\microsoft.applicationinsights.extensibility.runtimetelemetry.winmd" HashGuid="e8ffcc49-b552-58ee-7b16-8fba2f1f880a" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\microsoft.applicationinsights.windowsphone.0.11.1-build00694\lib\wpa81\microsoft.applicationinsights.extensibility.windows.winmd" HashGuid="2cc9fd37-9839-0765-e369-aa937f791053" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\microsoft.applicationinsights.0.11.1-build00694\lib\portable-win81+wpa81\microsoft.applicationinsights.winmd" HashGuid="3232f9fa-00ef-9384-cb76-87569394cf07" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\windowsazure.mobileservices.1.3.0\lib\wpa81\microsoft.windowsazure.mobile.dll" HashGuid="9ab4b265-fb21-8752-5898-094f17593689" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\windowsazure.mobileservices.1.3.0\lib\wpa81\microsoft.windowsazure.mobile.ext.dll" HashGuid="d14f6c57-ffca-9ad1-126f-ce93487ab524" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\newtonsoft.json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="d0c321bd-bfc3-83af-d7a2-da028a11b529" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\nightscout.livetile\bin\release\nightscout.livetile.winmd" HashGuid="84215eb2-fcb4-1840-8571-9e95b60171cb" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\microsoft.net.http.2.2.28\lib\wpa81\system.net.http.extensions.dll" HashGuid="794366f8-cc6d-f0fa-3d07-33b45136e193" />
+    <ReferenceAssembly PathName="c:\users\alimaz\documents\github\amazaheri\windows-phone-app\nightscoutwp\packages\microsoft.net.http.2.2.28\lib\wpa81\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>
