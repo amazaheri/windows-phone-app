@@ -25,8 +25,6 @@ namespace NightScoutMobileService
 
         public async override Task ExecuteAsync()
         {
-            
-            
             try
             {
                 var client = new MongoClient(this.Services.Settings.Connections["Mongo"].ConnectionString);
@@ -34,8 +32,7 @@ namespace NightScoutMobileService
                 var database = server.GetDatabase(this.Services.Settings["MongoDB"]);
                 var collection = database.GetCollection<NightScoutReading>(this.Services.Settings["MongoCollection"]);
                 var query = collection.AsQueryable<NightScoutReading>().Where(e => e.Type == "sgv").Last<NightScoutReading>();
-                string direction = "-";              
-                        
+                string direction = "-";
 
                 if (lastReadingId != query.Id)
                 {
@@ -65,33 +62,15 @@ namespace NightScoutMobileService
                         }
 
                         lastReadingId = query.Id;
-
                         string notification = String.Format("Current bg: {0} Trend: {1}", query.Sgv, direction);
                         if (bool.Parse(this.Services.Settings["PushNotification"]))
                         {
-                            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
-                            var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
-                            await hub.SendWindowsNativeNotificationAsync(toast);
+                            await SendPushNotification(notification);
                         }
 
                         if (bool.Parse(this.Services.Settings["SMSNotification"]))
                         {
-                            string accountSID = this.Services.Settings["TwilioSID"];
-                            string authToken = this.Services.Settings["TwilioToken"];
-
-                            // Create an instance of the Twilio client.
-                            TwilioRestClient tClient;
-                            tClient = new TwilioRestClient(accountSID, authToken);
-
-                            // Send an SMS message.
-                            SMSMessage result = await tClient.SendSmsMessageAsync(
-                                this.Services.Settings["TwilioFrom"], this.Services.Settings["TwilioTo"], notification);
-
-                            if (result.RestException != null)
-                            {
-                                //an exception occurred making the REST call
-                                string message = result.RestException.Message;
-                            }
+                            await SendSms(notification);
                         }
                     }
                 }
@@ -99,11 +78,35 @@ namespace NightScoutMobileService
             catch (Exception ex)
             {
                 this.Services.Log.Error(ex.Message);
-
             }
-
         }
 
+        private async Task SendSms(string notification)
+        {
+            string accountSID = this.Services.Settings["TwilioSID"];
+            string authToken = this.Services.Settings["TwilioToken"];
+
+            // Create an instance of the Twilio client.
+            TwilioRestClient tClient;
+            tClient = new TwilioRestClient(accountSID, authToken);
+
+            // Send an SMS message.
+            SMSMessage result = await tClient.SendSmsMessageAsync(
+                this.Services.Settings["TwilioFrom"], this.Services.Settings["TwilioTo"], notification);
+
+            if (result.RestException != null)
+            {
+                //an exception occurred making the REST call
+                string message = result.RestException.Message;
+            }
+        }
+
+        private static async Task SendPushNotification(string notification)
+        {
+            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
+            var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
+            await hub.SendWindowsNativeNotificationAsync(toast);
+        }
     }
 
 }
