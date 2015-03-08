@@ -12,7 +12,7 @@ using Microsoft.ServiceBus.Notifications;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Driver.Linq;
-
+using Twilio;
 
 namespace NightScoutMobileService
 {
@@ -29,17 +29,17 @@ namespace NightScoutMobileService
             
             try
             {
-                var client = new MongoClient(this.Services.Settings.Connections["mongo"].ConnectionString);
+                var client = new MongoClient(this.Services.Settings.Connections["Mongo"].ConnectionString);
                 var server = client.GetServer();
-                var database = server.GetDatabase("sithlordsam");
-                var collection = database.GetCollection<NightScoutReading>("sithlordsam");
+                var database = server.GetDatabase(this.Services.Settings["MongoDB"]);
+                var collection = database.GetCollection<NightScoutReading>(this.Services.Settings["MongoCollection"]);
                 var query = collection.AsQueryable<NightScoutReading>().Where(e => e.Type == "sgv").Last<NightScoutReading>();
                 string direction = "-";              
                         
 
                 if (lastReadingId != query.Id)
                 {
-                    if ((query.Sgv <= 70) || (query.Sgv >= 180))
+                    if ((query.Sgv <= int.Parse(this.Services.Settings["SgvLow"])) || (query.Sgv >= int.Parse(this.Services.Settings["SgvHigh"])))
                     {
                         switch (query.Direction.ToLower())
                         {
@@ -67,9 +67,32 @@ namespace NightScoutMobileService
                         lastReadingId = query.Id;
 
                         string notification = String.Format("Current bg: {0} Trend: {1}", query.Sgv, direction);
-                        NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
-                        var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
-                        await hub.SendWindowsNativeNotificationAsync(toast);
+                        if (bool.Parse(this.Services.Settings["PushNotification"]))
+                        {
+                            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
+                            var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
+                            await hub.SendWindowsNativeNotificationAsync(toast);
+                        }
+
+                        if (bool.Parse(this.Services.Settings["SMSNotification"]))
+                        {
+                            string accountSID = this.Services.Settings["TwilioSID"];
+                            string authToken = this.Services.Settings["TwilioToken"];
+
+                            // Create an instance of the Twilio client.
+                            TwilioRestClient tClient;
+                            tClient = new TwilioRestClient(accountSID, authToken);
+
+                            // Send an SMS message.
+                            SMSMessage result = await tClient.SendSmsMessageAsync(
+                                this.Services.Settings["TwilioFrom"], this.Services.Settings["TwilioTo"], notification);
+
+                            if (result.RestException != null)
+                            {
+                                //an exception occurred making the REST call
+                                string message = result.RestException.Message;
+                            }
+                        }
                     }
                 }
             }
