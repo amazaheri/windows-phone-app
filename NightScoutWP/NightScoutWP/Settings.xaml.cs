@@ -147,6 +147,7 @@ namespace NightScout.WindowsPhone
                 taskBuilder.Name = taskName;
                 taskBuilder.TaskEntryPoint = taskEntryPoint;
                 taskBuilder.SetTrigger(new TimeTrigger(15, false));
+                //taskBuilder.SetTrigger(new PushNotificationTrigger());
                 var registration = taskBuilder.Register();
             }
             #endregion

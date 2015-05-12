@@ -84,6 +84,18 @@
     <Compile Include="TileUpdater.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Band, Version=1.10.10417.1, Culture=neutral, PublicKeyToken=608d7da3159f502b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Band.Phone, Version=1.10.10417.1, Culture=neutral, PublicKeyToken=608d7da3159f502b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Phone.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Band.Store, Version=1.10.10417.1, Culture=neutral, PublicKeyToken=608d7da3159f502b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Store.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -96,6 +108,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

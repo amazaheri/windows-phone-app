@@ -19,8 +19,12 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Networking.PushNotifications;
 using Windows.UI.Popups;
 using Microsoft.WindowsAzure.MobileServices;
-
-
+using Microsoft.Band;
+using Microsoft.Band.Notifications;
+using Microsoft.Band.Tiles;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 
 
 // The WebView Application template is documented at http://go.microsoft.com/fwlink/?LinkID=391641
@@ -229,6 +233,7 @@ namespace NightScout.WindowsPhone
             // Request a push notification channel.
             var channel = await PushNotificationChannelManager
                 .CreatePushNotificationChannelForApplicationAsync();
+            channel.PushNotificationReceived += Channel_PushNotificationReceived;
 
             // Register for notifications using the new channel
             System.Exception exception = null;
@@ -260,5 +265,27 @@ namespace NightScout.WindowsPhone
             }
         }
 
+        async private void Channel_PushNotificationReceived(PushNotificationChannel sender, PushNotificationReceivedEventArgs args)
+        {
+            try
+            {
+                string notification = args.ToastNotification.Content.InnerText;
+                // Get the list of Microsoft Bands paired to the phone.
+                IBandInfo[] pairedBands = await BandClientManager.Instance.GetBandsAsync();
+                // Connect to Microsoft Band.
+                using (IBandClient bandClient = await BandClientManager.Instance.ConnectAsync(pairedBands[0]))
+                {
+                    // Create a Tile.
+                    Guid myTileId = new Guid("D781F673-6D05-4D69-BCFF-EA7E706C3418");
+
+                    // Send a notification.
+                    await bandClient.NotificationManager.SendMessageAsync(myTileId, "NightScout", notification, DateTimeOffset.Now, MessageFlags.ShowDialog);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
     }
 }

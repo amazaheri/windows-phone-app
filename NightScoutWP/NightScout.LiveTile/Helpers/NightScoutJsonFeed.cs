@@ -11,6 +11,8 @@ using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 using System.Diagnostics;
 using Newtonsoft.Json.Converters;
+using Microsoft.Band;
+using Microsoft.Band.Notifications;
 
 namespace NightScout.LiveTile
 {

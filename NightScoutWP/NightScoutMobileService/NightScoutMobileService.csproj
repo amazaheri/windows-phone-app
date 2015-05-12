@@ -24,6 +24,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <NuGetPackageImportStamp>b08f2d3c</NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/b326f01f-b5a4-4e7d-948f-f13b4f678ac7/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/NightScoutMobileService</ApplicationInsightsResourceId>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

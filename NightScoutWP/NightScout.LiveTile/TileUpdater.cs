@@ -13,8 +13,10 @@ using Windows.UI.Notifications;
 using System.Diagnostics;
 using Windows.Web.Syndication;
 using Windows.Foundation;
+using Microsoft.Band;
+using Microsoft.Band.Notifications;
 
-    namespace NightScout.LiveTile
+namespace NightScout.LiveTile
 {
     public sealed class TileUpdater : IBackgroundTask
     {
@@ -23,6 +25,22 @@ using Windows.Foundation;
         {
             try
             {
+
+                //RawNotification rawNotification = (RawNotification)taskInstance.TriggerDetails;
+                //string notification = rawNotification.Content;
+
+                //IBandInfo[] pairedBands = await BandClientManager.Instance.GetBandsAsync();
+                //// Connect to Microsoft Band.
+                //using (IBandClient bandClient = await BandClientManager.Instance.ConnectAsync(pairedBands[0]))
+                //{
+                //    // Create a Tile.
+                //    Guid myTileId = new Guid("D781F673-6D05-4D69-BCFF-EA7E706C3418");
+                //    if (bandClient != null)
+                //    {         // Send a notification.
+                //        await bandClient.NotificationManager.SendMessageAsync(myTileId, "NightScout", notification, DateTimeOffset.Now, MessageFlags.ShowDialog);
+                //    }
+                //}
+
                 string NightScoutJsonURL = "";
                 Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
                 Windows.Storage.StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;

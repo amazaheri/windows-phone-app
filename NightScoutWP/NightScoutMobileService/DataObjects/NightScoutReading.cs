@@ -24,7 +24,7 @@ namespace NightScoutMobileService.DataObjects
         [BsonElement("rssi")]
         public int Rssi { get; set; }
         [BsonElement("date")]
-        public DateTime Date { get; set; }
+        public long Date { get; set; }
         [BsonElement("mbg")]
         public int Mbg { get; set; }
         [BsonElement("slope")]
@@ -33,6 +33,8 @@ namespace NightScoutMobileService.DataObjects
         public double Scale { get; set; }
         [BsonElement("intercept")]
         public double Intercept { get; set; }
-        
+        [BsonElement("noise")]
+        public double Noise { get; set; }
+
     }
 }

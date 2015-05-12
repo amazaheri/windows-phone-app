@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22310.1
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightScout.WindowsPhone", "NightScoutWP\NightScout.WindowsPhone.csproj", "{51F21162-7676-453E-9BEC-A3E4CC04A99E}"
 EndProject
@@ -14,6 +14,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C2D1ED0E-48DF-4382-B887-CA14B5A000B4}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A13F5EF-1927-4D98-85AC-534E406E141E}"
+	ProjectSection(SolutionItems) = preProject
+		pebble-js-app.js = pebble-js-app.js
+		pebble.json = pebble.json
 	EndProjectSection
 EndProject
 Global
