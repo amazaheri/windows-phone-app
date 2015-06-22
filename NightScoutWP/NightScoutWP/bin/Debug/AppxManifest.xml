@@ -45,28 +45,36 @@
   <Capabilities>
     <Capability Name="internetClientServer" />
     <DeviceCapability Name="microphone" />
+    <DeviceCapability Name="bluetooth.rfcomm" xmlns="http://schemas.microsoft.com/appx/2013/manifest">
+      <Device Id="any">
+        <!-- Used by the Microsoft Band SDK Preview -->
+        <Function Type="serviceId:A502CA9A-2BA5-413C-A4E0-13804E47B38F" />
+        <!-- Used by the Microsoft Band SDK Preview -->
+        <Function Type="serviceId:C742E1A2-6320-5ABC-9643-D206C677E580" />
+      </Device>
+    </DeviceCapability>
   </Capabilities>
   <Extensions>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>CLRHost.dll</Path>
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.RemoteDependencyModule" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.UnhandledExceptionTelemetryModule" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.PageViewTelemetryModule" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.Windows.UnhandledExceptionTelemetryModule" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Channel.TelemetryChannel" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.MetricTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TraceTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.EventTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.PageViewTelemetry" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TelemetryContext" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.TelemetryClient" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TimestampPropertyInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppUserInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.StoreAppSessionInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TimestampPropertyInitializer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.ComponentContextInitializer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.DeviceContextInitializer" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TraceTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.PageViewTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.EventTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.TelemetryContext" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.MetricTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.DataContracts.ExceptionTelemetry" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.ApplicationInsights.TelemetryClient" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NightScout.LiveTile.TileUpdater" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="NightScout.LiveTile.NightScoutJsonFeed" ThreadingModel="both" />
       </InProcessServer>
@@ -75,11 +83,12 @@
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value="WindowsPhoneApp,Version=v8.1" />
     <build:Item Name="VisualStudio" Version="14.0" />
-    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Ultimate 2015 Preview" />
-    <build:Item Name="OperatingSystem" Version="10.0.9896.0 (fbl_release.141124-1153)" />
-    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.22310.1" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2015 RC" />
+    <build:Item Name="OperatingSystem" Version="10.0.10134.0 (fbl_impressive.150529-1943)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.22823.1" />
     <build:Item Name="ProjectGUID" Value="{51F21162-7676-453E-9BEC-A3E4CC04A99E}" />
-    <build:Item Name="Microsoft.Windows.UI.Xaml.81.Build.Tasks.dll" Version="14.0.22310.1" />
-    <build:Item Name="MakePri.exe" Version="6.3.9600.17298 (winblue.141024-1500)" />
+    <build:Item Name="ilc.exe" Version="1.0.22816.00 built by: PROJECTNREL" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.81.Build.Tasks.dll" Version="14.0.22705.1" />
+    <build:Item Name="MakePri.exe" Version="6.3.9600.17336 (winblue.150226-1500)" />
   </build:Metadata>
 </Package>

@@ -1,155 +1,185 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>ALIMAZSURFACE3</Machine>
+    <Machine>MININT-U7B9FFO</Machine>
     <WindowsUser>alimaz</WindowsUser>
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>1bc82243-02c6-4ac2-a9cd-eac4a3447f4d</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\NightScout.WindowsPhone.exe">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\NightScout.WindowsPhone.exe">
       <PackagePath>NightScout.WindowsPhone.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.11.1-build00694\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.winmd">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\NightScout.WindowsPhone.exe.config">
+      <PackagePath>NightScout.WindowsPhone.exe.config</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.11.1-build00694\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.winmd">
       <PackagePath>Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\Microsoft.ApplicationInsights.WindowsPhone.0.11.1-build00694\lib\wpa81\Microsoft.ApplicationInsights.Extensibility.Windows.winmd">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.ApplicationInsights.WindowsPhone.0.11.1-build00694\lib\wpa81\Microsoft.ApplicationInsights.Extensibility.Windows.winmd">
       <PackagePath>Microsoft.ApplicationInsights.Extensibility.Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\Microsoft.ApplicationInsights.0.11.1-build00694\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.winmd">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.ApplicationInsights.0.11.1-build00694\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.winmd">
       <PackagePath>Microsoft.ApplicationInsights.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScout.LiveTile\bin\Debug\NightScout.LiveTile.winmd">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScout.LiveTile\bin\Debug\NightScout.LiveTile.winmd">
       <PackagePath>NightScout.LiveTile.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\WindowsAzure.MobileServices.1.3.0\lib\wpa81\Microsoft.WindowsAzure.Mobile.dll">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.dll">
+      <PackagePath>Microsoft.Band.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Phone.dll">
+      <PackagePath>Microsoft.Band.Phone.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Store.dll">
+      <PackagePath>Microsoft.Band.Store.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\WindowsAzure.MobileServices.1.3.0\lib\wpa81\Microsoft.WindowsAzure.Mobile.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\WindowsAzure.MobileServices.1.3.0\lib\wpa81\Microsoft.WindowsAzure.Mobile.Ext.dll">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\WindowsAzure.MobileServices.1.3.0\lib\wpa81\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Extensions.dll">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\obj\Debug\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\BadgeLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\BadgeLogo.scale-140.png">
       <PackagePath>Assets\BadgeLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\BadgeLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\BadgeLogo.scale-240.png">
       <PackagePath>Assets\BadgeLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Logo.scale-140.png">
       <PackagePath>Assets\Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\logomobile.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\logomobile.png">
       <PackagePath>Assets\logomobile.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SmallLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SmallLogo.scale-140.png">
       <PackagePath>Assets\SmallLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Square71x71Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Square71x71Logo.scale-100.png">
       <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Square71x71Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Square71x71Logo.scale-140.png">
       <PackagePath>Assets\Square71x71Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\StoreLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\StoreLogo.scale-140.png">
       <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\WideLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\WideLogo.scale-100.png">
       <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\WideLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\WideLogo.scale-140.png">
       <PackagePath>Assets\WideLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Html\css\phone.css">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Html\css\phone.css">
       <PackagePath>Html\css\phone.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\Html\index.html">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\Html\index.html">
       <PackagePath>Html\index.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\NightScoutCommands.xml">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\NightScoutCommands.xml">
       <PackagePath>NightScoutCommands.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\App.xbf">
-      <PackagePath>App.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\Settings.xbf">
-      <PackagePath>Settings.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\NightScout.WindowsPhone.xr.xml">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\NightScout.WindowsPhone.xr.xml">
       <PackagePath>NightScout.WindowsPhone.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alimaz\Documents\GitHub\amazaheri\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\Settings.xbf">
+      <PackagePath>Settings.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Phone\Microsoft.Band.Phone.xr.xml">
+      <PackagePath>Microsoft.Band.Phone\Microsoft.Band.Phone.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Phone\Sensors\PhoneSensorConsentPage.xbf">
+      <PackagePath>Microsoft.Band.Phone\Sensors\PhoneSensorConsentPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Phone\Tiles\PhoneAddTilePage.xbf">
+      <PackagePath>Microsoft.Band.Phone\Tiles\PhoneAddTilePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Store\Microsoft.Band.Store.xr.xml">
+      <PackagePath>Microsoft.Band.Store\Microsoft.Band.Store.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Store\Sensors\SensorConsentPage.xbf">
+      <PackagePath>Microsoft.Band.Store\Sensors\SensorConsentPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\packages\Microsoft.Band.1.10.10417\lib\wpa81\Microsoft.Band.Store\Tiles\AddTilePage.xbf">
+      <PackagePath>Microsoft.Band.Store\Tiles\AddTilePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Dev\GitHub\windows-phone-app\NightScoutWP\NightScoutWP\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

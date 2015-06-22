@@ -184,7 +184,7 @@ function fetchCgmData() {
                           //console.log("Special Value Calculated Raw: " + currentCalcRaw);
                         } 
                         else {
-                          currentRatio = (currentScale * (currentRawFilt - currentIntercept) / currentSlope / (currentConvBG*1 + rawCalcOffset*1));
+                          currentRatio =   (currentScale * (currentRawFilt - currentIntercept) / currentSlope / (currentConvBG*1 + rawCalcOffset*1));
                           currentCalcRaw = ((currentScale * (currentRawUnfilt - currentIntercept) / currentSlope / currentRatio)*1 - rawCalcOffset*1);
                           //console.log("Current Converted BG: " + currentConvBG);
                           //console.log("Current Ratio: " + currentRatio);

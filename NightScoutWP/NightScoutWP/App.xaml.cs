@@ -113,8 +113,8 @@ namespace NightScout.WindowsPhone
                 }
             }
 
-            var storageFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///NightScoutCommands.xml"));
-            await Windows.Media.SpeechRecognition.VoiceCommandManager.InstallCommandSetsFromStorageFileAsync(storageFile);
+            //var storageFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///NightScoutCommands.xml"));
+            //await Windows.Media.SpeechRecognition.VoiceCommandManager.InstallCommandSetsFromStorageFileAsync(storageFile);
             
             // Ensure the current window is active
             Window.Current.Activate();
@@ -193,34 +193,34 @@ namespace NightScout.WindowsPhone
                 return;
             }
 
-            var commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
-            Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+            //var commandArgs = e as Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs;
+            //Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
 
             // The commandMode is either "voice" or "text", and it indicates how the voice command was entered by the user.
             // We should respect "text" mode by providing feedback in a silent form.
-            string commandMode = this.SemanticInterpretation("commandMode", speechRecognitionResult);
+            //string commandMode = this.SemanticInterpretation("commandMode", speechRecognitionResult);
 
             // If so, get the name of the voice command, the actual text spoken, and the value of Command/Navigate@Target.
-            string voiceCommandName = speechRecognitionResult.RulePath[0];
-            string textSpoken = speechRecognitionResult.Text;
-            string navigationTarget = this.SemanticInterpretation("NavigationTarget", speechRecognitionResult);
+            //string voiceCommandName = speechRecognitionResult.RulePath[0];
+            //string textSpoken = speechRecognitionResult.Text;
+            //string navigationTarget = this.SemanticInterpretation("NavigationTarget", speechRecognitionResult);
 
             Type navigateToPageType = typeof(MainPage);
             string navigationParameterString = string.Empty;
 
-            switch (voiceCommandName)
-            {
+            //switch (voiceCommandName)
+            //{
                 
-                case "showLatestReading":
-                    string request = this.SemanticInterpretation("bgReading", speechRecognitionResult);
-                    navigateToPageType = typeof(MainPage);
-                    navigationParameterString = string.Format("{0}|{1}", commandMode, request);
-                    break;
+            //    case "showLatestReading":
+            //        string request = this.SemanticInterpretation("bgReading", speechRecognitionResult);
+            //        navigateToPageType = typeof(MainPage);
+            //        navigationParameterString = string.Format("{0}|{1}", commandMode, request);
+            //        break;
 
-                default:
-                    // There is no match for the voice command name.
-                    break;
-            }
+            //    default:
+            //        // There is no match for the voice command name.
+            //        break;
+            //}
             this.EnsureRootFrame(e.PreviousExecutionState);
             if (!rootFrame.Navigate(navigateToPageType))
             {

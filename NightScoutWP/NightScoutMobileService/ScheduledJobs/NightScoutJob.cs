@@ -24,12 +24,12 @@ namespace NightScoutMobileService
 
     public class NightScoutJob : ScheduledJob
     {
-        private string lastReadingId = "";
 
         public async override Task ExecuteAsync()
         {
             long bg;
-            string direction="-";
+            long rawbg = 0;
+            string direction = "-";
             string battery;
             int bgdelta;
             long filtered;
@@ -38,12 +38,22 @@ namespace NightScoutMobileService
             long intercept;
             int scale;
             DateTime date;
+            TimeSpan lastReading;
             int rawCalcOffset = 5;
             long currentRatio = 0;
-            
+            bool sendAlert = false;
+
+            string pebbleEndPoint = this.Services.Settings["Pebble"];
+            int sgvHigh = int.Parse(this.Services.Settings["SgvHigh"]);
+            int sgvLow = int.Parse(this.Services.Settings["SgvLow"]);
+            bool pushNotification = bool.Parse(this.Services.Settings["PushNotification"]);
+            bool SMSNotification = bool.Parse(this.Services.Settings["SMSNotification"]);
+            bool raw = false;
+
 
             try
             {
+                //Direct access to MongoDB
                 //var client = new MongoClient(this.Services.Settings.Connections["Mongo"].ConnectionString);
                 //var server = client.GetServer();
                 //var database = server.GetDatabase(this.Services.Settings["MongoDB"]);
@@ -52,16 +62,17 @@ namespace NightScoutMobileService
                 //string direction = "-";
 
                 HttpClient client = new HttpClient();
-                string jsonResponse = await client.GetStringAsync(this.Services.Settings["Pebble"]);
+                string jsonResponse = await client.GetStringAsync(pebbleEndPoint);
                 JObject response = JObject.Parse(jsonResponse);
 
-                bg =long.Parse(response["bgs"][0]["sgv"].ToString());
+                bg = long.Parse(response["bgs"][0]["sgv"].ToString());
                 battery = response["bgs"][0]["battery"].ToString();
                 direction = response["bgs"][0]["direction"].ToString();
                 bgdelta = int.Parse(response["bgs"][0]["bgdelta"].ToString());
                 filtered = long.Parse(response["bgs"][0]["filtered"].ToString());
                 unfiltered = long.Parse(response["bgs"][0]["unfiltered"].ToString());
                 date = new DateTime(1970, 01, 01).AddMilliseconds(long.Parse(response["bgs"][0]["datetime"].ToString()));
+                lastReading = DateTime.Now - date;
 
                 if (response["cals"][0]["slope"] != null)
                 {
@@ -70,45 +81,51 @@ namespace NightScoutMobileService
                     scale = int.Parse(response["cals"][0]["scale"].ToString());
                     if (bg < 10)
                     {
-                        currentRatio = (scale * (filtered - intercept) / slope / (bg * 1 + rawCalcOffset * 1));
-                        bg = ((scale * (unfiltered - intercept) / slope / currentRatio) * 1 - rawCalcOffset * 1);                        
+                        //currentRatio = (scale * (filtered - intercept) / slope / (bg * 1 + rawCalcOffset * 1));
+                        //rawbg = ((scale * (unfiltered - intercept) / slope / currentRatio) * 1 - rawCalcOffset * 1);
+                        //rawbg = ((scale * (unfiltered - intercept) / slope) * 1 - rawCalcOffset * 1);
+                        rawbg = scale * (unfiltered - intercept) / slope;
+                        raw = true;
+
                     }
                 }
 
-                if ((bg <= int.Parse(this.Services.Settings["SgvLow"])) || (bg >= int.Parse(this.Services.Settings["SgvHigh"])))
+
+                switch (direction.ToLower())
                 {
-                    switch (direction.ToLower())
-                    {
-                        case "singleup":
-                            direction = '\x25B2'.ToString();
-                            break;
-                        case "doubleup":
-                            direction = string.Concat('\x25B2', '\x25B2');
-                            break;
-                        case "fortyfiveup":
-                            direction = '\x25B3'.ToString();
-                            break;
-                        case "singledown":
-                            direction = '\x25BC'.ToString();
-                            break;
-                        case "doubledown":
-                            direction = string.Concat('\x25BC', '\x25BC');
-                            break;
-                        case "fortyfivedown":
-                            direction = '\x25BD'.ToString();
-                            break;
-                        case "NOT COMPUTABLE": break;
-                    }
+                    case "singleup":
+                        direction = '\x25B2'.ToString();
+                        break;
+                    case "doubleup":
+                        direction = string.Concat('\x25B2', '\x25B2');
+                        sendAlert = true;
+                        break;
+                    case "fortyfiveup":
+                        direction = '\x25B3'.ToString();
+                        break;
+                    case "singledown":
+                        direction = '\x25BC'.ToString();
+                        break;
+                    case "doubledown":
+                        direction = string.Concat('\x25BC', '\x25BC');
+                        sendAlert = true;
+                        break;
+                    case "fortyfivedown":
+                        direction = '\x25BD'.ToString();
+                        break;
 
-                    
-                    string notification = String.Format("bg: {0} {1} mg/dL {2}", bg, ((bgdelta > 0 ? '+' : ' ') + bgdelta.ToString()), direction);
+                }
+                if ((bg <= sgvLow) || (bg >= sgvHigh) || sendAlert)
+                {
 
-                    if (bool.Parse(this.Services.Settings["PushNotification"]))
+                    string notification = String.Format("{0}: {1} {2} mg/dL {3} {4} min(s) ago", (raw ? "raw bg" : "bg"), (raw ? rawbg : bg), ((bgdelta > 0 ? '+' : ' ') + bgdelta.ToString()), direction, lastReading.Minutes);
+
+                    if (pushNotification)
                     {
                         await SendPushNotification(notification);
                     }
 
-                    if (bool.Parse(this.Services.Settings["SMSNotification"]))
+                    if (SMSNotification)
                     {
                         await SendSms(notification);
                     }
@@ -125,7 +142,6 @@ namespace NightScoutMobileService
         {
             string accountSID = this.Services.Settings["TwilioSID"];
             string authToken = this.Services.Settings["TwilioToken"];
-
             // Create an instance of the Twilio client.
             TwilioRestClient tClient;
             tClient = new TwilioRestClient(accountSID, authToken);
@@ -141,9 +157,11 @@ namespace NightScoutMobileService
             }
         }
 
-        private static async Task SendPushNotification(string notification)
+        private async Task SendPushNotification(string notification)
         {
-            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("Endpoint=sb://nightscoutmobilehub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=xl1zRhF0EKmoZdkHdvzGT+RCx7YpzGopDnRjrDpp6QA=", "nightscoutmobilehub");
+            string NHConnection = this.Services.Settings.Connections["NHConnectionString"].ConnectionString;
+            string NHPath = this.Services.Settings["NHPath"].ToString();
+            NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(NHConnection, NHPath);
             var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + notification + "</text></binding></visual></toast>";
             await hub.SendWindowsNativeNotificationAsync(toast);
         }
